@@ -1,0 +1,28 @@
+.headerContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.headerContainer input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    background-color: ghostwhite;
+}
+
+.headerContainer button {
+    padding: 11px;
+    width: 70px;
+    background-color: green;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.alertMessage {
+  font-size: 12px;
+  margin-left: 30px;
+  color: red;
+}

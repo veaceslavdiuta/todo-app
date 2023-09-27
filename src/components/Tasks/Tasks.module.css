@@ -1,0 +1,56 @@
+.tasksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 450px;
+}
+
+.tasksContainer .task {
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(233, 229, 229);
+    padding: 5px;
+    border-radius: 5px;
+    align-items: center;
+    max-width: 450px;
+}
+
+.task span {
+    max-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.task input {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 5px;
+}
+
+.buttonContainer .editButton {
+    padding: 11px;
+    background-color: green;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buttonContainer .removeButton {
+    padding: 11px;
+    background-color:red;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.noItem {
+    color:rgb(134, 131, 131)
+}
