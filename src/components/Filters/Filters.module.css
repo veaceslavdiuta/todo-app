@@ -1,27 +1,27 @@
 .filters {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 70px;
 }
 
 .listContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
 }
 
 .listContainer li {
-    list-style: none;
-    cursor: pointer;
-    font-size: 16px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .filters button {
-    background-color:rgb(17, 135, 175);
-    padding: 7px;
-    cursor: pointer;
-    border: 0;
-    color: white;
-    border-radius: 4px;
+  background-color: rgb(17, 135, 175);
+  padding: 7px;
+  cursor: pointer;
+  border: 0;
+  color: white;
+  border-radius: 4px;
 }

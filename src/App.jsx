@@ -18,10 +18,10 @@ function App() {
   const handleSave = () => {
     if (inputValue.name === '') {
       return setMessage('Please fill in form fields!');
-    } else  {
+    } else {
       setMessage('');
-    } 
-    
+    }
+
     if (inputValue.id === null) {
       inputValue.id = tasks.length + 1;
 
@@ -40,7 +40,11 @@ function App() {
   };
 
   const handleRemove = (task) => {
-    setTasks([...tasks.filter(item => item.id !== task.id)]);
+    const canRemove = window.confirm('Delete task?');
+
+    if (canRemove) {
+      setTasks([...tasks.filter(item => item.id !== task.id)]);
+    }
   };
 
   const handleCompletedChange = (task, checked) => {
@@ -54,8 +58,12 @@ function App() {
   };
 
   const handleClearAll = () => {
-    setTasks([]);
-    setInputValue(defaultTaskValue);
+    const canClearAll = window.confirm('Delete all tasks?');
+
+    if (canClearAll) {
+      setTasks([]);
+      setInputValue(defaultTaskValue);
+    }
   };
 
   return (
@@ -64,9 +72,9 @@ function App() {
         <h1>To-Do list..</h1>
         <Header inputValue={inputValue}
           setInputValue={setInputValue}
-          handleSave={handleSave} 
+          handleSave={handleSave}
           message={message}
-          setMessage={setMessage}/>
+          setMessage={setMessage} />
 
         <Filters status={status}
           setStatus={setStatus}

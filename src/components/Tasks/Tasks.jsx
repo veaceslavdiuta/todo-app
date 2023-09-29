@@ -6,15 +6,17 @@ function Tasks(props) {
         <ul className={classes.tasksContainer}>
             {props.tasks.map(task => (
                 <li className={classes.task} key={task.id}>
-                    <input type="checkbox"
-                        checked={task.completed}
-                        onChange={(event) => props.handleCompletedChange(task, event.target.checked)} />
-                    <span style={{ textDecoration: task.completed === true ? 'line-through' : 'none' }}>
-                        {task.name}
-                    </span>
+                    <div className={classes.textContainer}>
+                        <input type="checkbox"
+                            checked={task.completed}
+                            onChange={(event) => props.handleCompletedChange(task, event.target.checked)} />
+                        <span style={{ textDecoration: task.completed === true ? 'line-through' : 'none' }}>
+                            {task.name}
+                        </span>
+                    </div>
 
                     <div className={classes.buttonContainer}>
-                        <button className={classes.editButton} style={{ backgroundColor: task.completed ===true ? 'rgba(0, 128, 0, 0.527)' : 'green'}} disabled={task.completed }  onClick={() => props.setInputValue(task)}>Edit</button>
+                        <button className={classes.editButton} style={{ backgroundColor: task.completed === true ? 'rgba(0, 128, 0, 0.527)' : 'green' }} disabled={task.completed} onClick={() => props.setInputValue(task)}>Edit</button>
                         <button className={classes.removeButton} onClick={() => props.handleRemove(task)}>Remove</button>
                     </div>
                 </li>
