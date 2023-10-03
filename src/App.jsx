@@ -20,7 +20,7 @@ function App() {
       return setMessage('Please fill in form fields!');
     } else {
       setMessage('');
-    }
+    };
 
     if (inputValue.id === null) {
       inputValue.id = tasks.length + 1;
@@ -44,7 +44,7 @@ function App() {
 
     if (canRemove) {
       setTasks([...tasks.filter(item => item.id !== task.id)]);
-    }
+    };
   };
 
   const handleCompletedChange = (task, checked) => {
@@ -63,7 +63,7 @@ function App() {
     if (canClearAll) {
       setTasks([]);
       setInputValue(defaultTaskValue);
-    }
+    };
   };
 
   return (

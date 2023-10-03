@@ -12,8 +12,7 @@ function Filters(props) {
 
             <button onClick={() => props.handleClearAll()}>Clear All</button>
         </div>
-
-    )
+    );
 };
 
 export default Filters;

@@ -16,7 +16,6 @@ function Header(props) {
 
             {props.message && <p className={classes.alertMessage}>{props.message}</p>}
         </div>
-
     );
 };
 
