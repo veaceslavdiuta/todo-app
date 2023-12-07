@@ -10,8 +10,9 @@ function App() {
     name: '',
     completed: false,
   };
+  const storageTasks = localStorage.getItem('tasks');
   const [inputValue, setInputValue] = useState(defaultTaskValue);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(storageTasks === null ? [] : JSON.parse(storageTasks));
   const [status, setStatus] = useState(null);
   const [message, setMessage] = useState('');
 
@@ -20,22 +21,23 @@ function App() {
       return setMessage('Please fill in form fields!');
     } else {
       setMessage('');
-    };
+    }
 
+    let updatedTasks;
     if (inputValue.id === null) {
       inputValue.id = tasks.length + 1;
-
-      setTasks([...tasks, inputValue])
+      updatedTasks = [...tasks, inputValue];
     } else {
       const index = tasks.findIndex(item => item.id === inputValue.id);
-
       if (index !== -1) {
         tasks[index] = inputValue;
-      };
+      }
+      updatedTasks = [...tasks];
+    }
 
-      setTasks([...tasks]);
-    };
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
 
+    setTasks(updatedTasks);
     setInputValue(defaultTaskValue);
   };
 
@@ -43,7 +45,9 @@ function App() {
     const canRemove = window.confirm('Delete task?');
 
     if (canRemove) {
-      setTasks([...tasks.filter(item => item.id !== task.id)]);
+      const updatedTasks = tasks.filter(item => item.id !== task.id);
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      setTasks(updatedTasks);
     };
   };
 

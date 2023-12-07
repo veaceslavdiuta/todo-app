@@ -11,7 +11,6 @@ function Header(props) {
                     onInput={(event) => props.setInputValue({ ...props.inputValue, name: event.target.value })} />
 
                 <button onClick={() => props.handleSave()}>Save</button>
-
             </div>
 
             {props.message && <p className={classes.alertMessage}>{props.message}</p>}
