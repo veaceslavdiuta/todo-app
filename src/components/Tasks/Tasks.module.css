@@ -2,16 +2,22 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 550px;
+  width: 60%;
 }
 
 .tasksContainer .task {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(233, 229, 229);
+  background-color: ghostwhite;
   padding: 5px;
   border-radius: 5px;
   align-items: center;
+  color: #432010;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 }
 .textContainer {
   display: flex;
@@ -23,7 +29,6 @@
 }
 
 .task input {
-  font-size: 16px;
   cursor: pointer;
 }
 
@@ -32,10 +37,15 @@
   gap: 5px;
 }
 
-.buttonContainer .editButton {
+.editButton {
   padding: 11px;
   background-color: green;
   color: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
   border: 0;
   border-radius: 8px;
   cursor: pointer;
@@ -45,11 +55,58 @@
   padding: 11px;
   background-color: red;
   color: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
   border: 0;
   border-radius: 8px;
   cursor: pointer;
 }
 
+.removeButton:hover {
+  background-color: rgb(185, 7, 7);
+}
+
 .noItem {
   color: rgb(134, 131, 131);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 991px) {
+  .tasksContainer {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tasksContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 548px) {
+  .tasksContainer .task {
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  .editButton {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .buttonContainer .removeButton {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .noItem {
+    font-size: 15px;
+  }
 }

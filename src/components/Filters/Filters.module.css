@@ -1,20 +1,30 @@
 .filters {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 70px;
+  justify-content: space-evenly;
+  width: 60%;
 }
 
 .listContainer {
   display: flex;
   flex-direction: row;
-  gap: 25px;
+  gap: 60px;
 }
 
 .listContainer li {
   list-style: none;
   cursor: pointer;
-  font-size: 16px;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  transition: transform 0.3s linear; 
+}
+
+
+.listContainer li:hover {
+  transform: scale(1.1);
 }
 
 .filters button {
@@ -24,4 +34,36 @@
   border: 0;
   color: white;
   border-radius: 4px;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+
+.filters button:hover {
+  background-color: rgb(10, 110, 143);
+}
+
+
+@media screen and (max-width: 991px) {
+  .filters {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 548px) {
+  .filters {
+    justify-content: space-between;
+  }
+  .listContainer {
+    gap: 20px;
+  }
 }
